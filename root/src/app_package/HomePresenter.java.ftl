@@ -15,7 +15,9 @@ import org.greenrobot.eventbus.ThreadMode;
 import javax.inject.Inject;
 
 /**
- * Created by tohuy on 9/10/2017.
+ * User: ntnhuy
+ * Date: ${.now?string('M/dd/yy')}
+ *Time: ${.now?string('h:mm a')}
  */
 
 public class ${className?replace("Fragment", "")}Presenter extends BasePresenter<${className?replace("Fragment", "")}View> {

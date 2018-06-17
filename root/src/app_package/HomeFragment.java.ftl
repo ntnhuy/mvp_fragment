@@ -5,20 +5,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.ButterKnife;
-
 import ${applicationPackage?replace(".mockup", "")}.R;
 import ${applicationPackage?replace(".mockup", "")}.app.bases.BaseFragment;
+import ${applicationPackage?replace(".mockup", "")}.databinding.${fragmentName?replace('_', ' ')?capitalize?replace(' ', '')}Binding;
 
 import javax.inject.Inject;
 
+/**
+ * User: ntnhuy
+ * Date: ${.now?string('M/dd/yy')}
+ *Time: ${.now?string('h:mm a')}
+ */
 
 public class ${className} extends BaseFragment implements ${className?replace("Fragment", "")}View {
 
     @Inject
     ${className?replace("Fragment", "")}Presenter presenter;
-
-    View view;
+    ${fragmentName?replace('_', ' ')?capitalize?replace(' ', '')}Binding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,11 +30,8 @@ public class ${className} extends BaseFragment implements ${className?replace("F
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        if (view == null) {
-            view = inflater.inflate(R.layout.${fragmentName}, container, false);
-            ButterKnife.bind(this, view);
-        }
-        return view;
+        binding = ${fragmentName?replace('_', ' ')?capitalize?replace(' ', '')}Binding.inflate(inflater);
+        return binding.getRoot();
     }
 
     @Override
